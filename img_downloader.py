@@ -15,7 +15,6 @@ localUrl = "/Users/cabinw/Dev/python/tornado/bg/"
 
 def output(i):
 	''' Print a progress bar'''
-	i=i+1
 	prog_str = "%3d%% [%-100s]"
 	sys.stdout.write(chr(0x0d))
 	sys.stdout.write(prog_str % (i, i*'='+'>'))
@@ -28,7 +27,7 @@ def progress(count,blockSize,totalSize):
 	''' url trieve callback'''
 	percentage = 100*count*blockSize/totalSize;
 	if 100 < percentage:
-		percentage=99  
+		percentage=100  
 	output(percentage)
 
 def download(url):
